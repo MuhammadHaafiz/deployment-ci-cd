@@ -1,0 +1,28 @@
+---
+- name: Deploy konfigurasi jaringan di test network
+  hosts: test_network
+  become: yes
+  tasks:
+    - name: Update paket
+      apt:
+        update_cache: yes
+        upgrade: yes
+
+    - name: Install net-tools
+      apt:
+        name: net-tools
+        state: present
+
+- name: Deploy konfigurasi jaringan di production network
+  hosts: production_network
+  become: yes
+  tasks:
+    - name: Update paket
+      apt:
+        update_cache: yes
+        upgrade: yes
+
+    - name: Install net-tools
+      apt:
+        name: net-tools
+        state: present
