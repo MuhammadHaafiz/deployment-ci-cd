@@ -11,8 +11,8 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
-                    sudo apt-get update
-                    sudo apt-get install -y ansible
+                    apt-get update
+                    apt-get install -y ansible
                 '''
             }
         }
